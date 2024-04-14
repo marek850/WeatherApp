@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="forekast.Views.AirQuality"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms" 
+             BackgroundImageSource="localityBack.jpg"
+             >
+    <StackLayout >
+     
+    <gauge:SfCircularGauge Margin="10">
+        <gauge:SfCircularGauge.Scales>
+                <gauge:Scale StartValue="1" EndValue="5" LabelColor="Black" Interval="1">
+                    <gauge:Scale.Ranges>
+                    <gauge:Range StartValue="1" EndValue="2.5" Color="Green"/>
+                    <gauge:Range StartValue="2.5" EndValue="3.5" Color="Orange"/>
+                    <gauge:Range StartValue="3.5" EndValue="4.99" Color="Red"/>
+                </gauge:Scale.Ranges>
+                <gauge:Scale.Pointers>
+              
+                    <gauge:NeedlePointer Value="{Binding AQI}" Color="Black"/>
+                   
+
+                </gauge:Scale.Pointers>
+            </gauge:Scale>
+        </gauge:SfCircularGauge.Scales>
+        <gauge:SfCircularGauge.Headers>
+            <gauge:Header Text="Air Quality Index" ForegroundColor="White" TextSize="20"/>
+        </gauge:SfCircularGauge.Headers>
+
+    </gauge:SfCircularGauge>
+        <border:SfBorder x:Name="border" HorizontalOptions="Center" 
+                                     BorderColor="Transparent"
+                                     VerticalOptions="CenterAndExpand"
+                                     CornerRadius="20" 
+                                     BorderWidth="1" 
+                                     HasShadow="True"
+                                     Padding="5"
+                                     WidthRequest="600"
+                                     ShadowColor="Black"
+                                     >
+        <Grid VerticalOptions="StartAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid>
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="0">
+                        <Label x:Name="soVal" Text="SO2" TextColor="White" FontSize="23" HorizontalOptions="Center"/>
+                        
+                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" >
+                            <Label x:Name="soText" Text="22" TextColor="White" FontSize="17" HorizontalOptions="Center"/>
+                            <Label Text="μg/m3" TextColor="White" FontSize="15" HorizontalOptions="End"/>
+
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+          
+            
+                <Grid Grid.Column="1">
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="0">
+                        <Label x:Name="noVal" Text="NO2" TextColor="White" FontSize="23" HorizontalOptions="Center"/>
+
+                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" >
+                            <Label x:Name="noText" Text="22" TextColor="White" FontSize="17" HorizontalOptions="Center"/>
+                            <Label Text="μg/m3" TextColor="White" FontSize="15" HorizontalOptions="End"/>
+
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+         
+                <Grid Grid.Column="2">
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="0">
+                        <Label x:Name="pm10Val" Text="PM10" TextColor="White" FontSize="18" HorizontalOptions="Center"/>
+
+                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" >
+                            <Label x:Name="pmText" Text="22" TextColor="White" FontSize="17" HorizontalOptions="Center"/>
+                            <Label Text="μg/m3" TextColor="White" FontSize="15" HorizontalOptions="End"/>
+
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+          
+                <Grid Grid.Column="3">
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="0">
+                        <Label x:Name="pm2Val" Text="PM2.5" TextColor="White" FontSize="18" HorizontalOptions="Center"/>
+
+                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" >
+                            <Label x:Name="pm2Text" Text="22" TextColor="White" FontSize="17" HorizontalOptions="Center"/>
+                            <Label Text="μg/m3" TextColor="White" FontSize="15" HorizontalOptions="End"/>
+
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+           
+                <Grid Grid.Column="4">
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="0">
+                        <Label x:Name="oVal" Text="O3" TextColor="White" FontSize="23" HorizontalOptions="Center"/>
+
+                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" >
+                            <Label x:Name="oText" Text="22" TextColor="White" FontSize="17" HorizontalOptions="Center"/>
+                            <Label Text="μg/m3" TextColor="White" FontSize="15" HorizontalOptions="End"/>
+
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+           
+                <Grid Grid.Column="5">
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="0">
+                        <Label x:Name="coVal" Text="CO" TextColor="White" FontSize="23" HorizontalOptions="Center"/>
+
+                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" >
+                            <Label x:Name="coText" Text="22" TextColor="White" FontSize="17" HorizontalOptions="Center"/>
+                            <Label Text="μg/m3" TextColor="White" FontSize="15" HorizontalOptions="End"/>
+
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+            
+        </Grid>
+        </border:SfBorder>
+    </StackLayout>
+</ContentPage>

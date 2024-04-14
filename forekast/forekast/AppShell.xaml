@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:forekast.Views"
+       xmlns:weather="clr-namespace:WeCast.Views"
+       Title="forekast"
+       x:Class="forekast.AppShell"
+       FlyoutBackgroundColor="#3479af">
+    <Shell.Resources>
+        <Style Class="FlyoutItemLabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="#ffbb54" />
+        </Style>
+        <Style
+        TargetType="Layout"
+        ApplyToDerivedTypes="True"
+        Class="FlyoutItemLayoutStyle">
+            <Setter
+        Property="HeightRequest"
+        Value="44" />
+            <Setter
+             Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup
+                x:Name="CommonStates">
+                        <VisualState
+                    x:Name="Selected">
+                            <VisualState.Setters>
+                                <!--<Setter
+                            Property="BackgroundColor"
+                            Value="#0287f0" />-->
+                                
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState
+                    x:Name="Normal">
+                            <VisualState.Setters>
+                                <!--<Setter
+                            Property="BackgroundColor"
+                            Value="#0287f0" />-->
+
+                            </VisualState.Setters>
+                        </VisualState>
+
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+
+        </Style>
+    </Shell.Resources>
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid HeightRequest="200" BackgroundColor="#014e8c">
+                <Image Aspect="AspectFill" Source="logoFly.png"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+    <FlyoutItem Route="weather" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Forecast" ContentTemplate="{DataTemplate weather:CurrentWeatherPage}"  />
+    </FlyoutItem>
+    <FlyoutItem Route="locality" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Locality" ContentTemplate="{DataTemplate local:Locality}" />
+    </FlyoutItem>
+    <FlyoutItem Route="air" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Air Pollution" ContentTemplate="{DataTemplate local:AirQuality}" />
+    </FlyoutItem>
+    
+
+</Shell>

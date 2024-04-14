@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="forekast.Views.Locality"
+             >
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#3479af">
+            <Grid BackgroundColor="#3479af">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+            <SearchBar Placeholder="Search Cities" TextChanged="SearchBar_TextChanged" VerticalOptions="End"/>
+
+                    <ImageButton Source="loc.png" Margin="20"  HeightRequest ="50" HorizontalOptions="End" VerticalOptions="End" Clicked="OnImageButtonClicked" BackgroundColor="#3479af"/>
+                   
+                </Grid>
+            </Grid>
+            <ListView x:Name="localities" SeparatorColor="#014e8c" ItemSelected="ListViewSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="25,0,0,0">
+                                <Label Text="{Binding Name}"
+                                       FontSize="Medium" 
+                                       TextColor="#ffbb54"
+                                       FontAttributes="Bold"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
